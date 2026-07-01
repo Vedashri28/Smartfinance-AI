@@ -49,3 +49,5 @@ The goal of this project is to demonstrate real-world Full Stack Development, Cl
 
 
 - Git & GitHub
+
+Vedashri Giri 
