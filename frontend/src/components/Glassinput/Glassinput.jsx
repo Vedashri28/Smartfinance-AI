@@ -25,16 +25,19 @@ const GlassInput = ({
           rounded-2xl
           border
           border-white/20
-          bg-white/5
+          bg-white/10
+          backdrop-blur-xl
           px-5
           pt-6
           pb-2
           text-white
-          backdrop-blur-xl
           outline-none
           transition-all
           duration-300
+          placeholder:text-gray-400
           focus:border-cyan-400
+          focus:ring-2
+          focus:ring-cyan-400/30
           focus:shadow-[0_0_20px_rgba(34,211,238,.35)]
         "
       />

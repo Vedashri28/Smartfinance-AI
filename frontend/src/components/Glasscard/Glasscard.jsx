@@ -8,16 +8,16 @@ const GlassCard = ({
       className={`
         relative
         overflow-hidden
-        rounded-[28px]
-        border border-white/10
-        bg-white/5
-        backdrop-blur-xl
-        shadow-2xl
+        rounded-[32px]
+        border border-white/20
+        bg-white/10
+        backdrop-blur-3xl
+        shadow-[0_0_60px_rgba(59,130,246,0.25)]
         transition-all
         duration-500
         ${
           hover
-            ? "hover:-translate-y-2 hover:shadow-[0_0_35px_rgba(59,130,246,.25)]"
+            ? "hover:-translate-y-2 hover:shadow-[0_0_60px_rgba(59,130,246,.35)]"
             : ""
         }
         ${className}

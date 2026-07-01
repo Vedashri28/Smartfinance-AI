@@ -8,7 +8,7 @@ const GlassButton = ({
 
   const variants = {
     primary:
-      "bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:shadow-[0_0_30px_rgba(99,102,241,.45)]",
+      "bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:shadow-[0_0_35px_rgba(168,85,247,0.45)]",
 
     secondary:
       "bg-white/10 text-white border border-white/20 hover:bg-white/15",
@@ -33,6 +33,7 @@ const GlassButton = ({
         transition-all
         duration-300
         hover:-translate-y-1
+        hover:scale-105
         active:scale-95
         ${variants[variant]}
         ${className}

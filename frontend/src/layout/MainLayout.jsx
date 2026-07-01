@@ -1,26 +1,24 @@
-﻿import Navbar from "../components/Navbar/Navbar";
-import Sidebar from "../components/Sidebar/Sidebar";
+﻿import Sidebar from "../components/Sidebar/Sidebar";
+import Navbar from "../components/Navbar/Navbar";
 
-function MainLayout({children}){
+function MainLayout({ children }) {
+  return (
+    <div className="min-h-screen bg-[#050816] flex">
 
-return(
+      <Sidebar />
 
-<div className="flex">
+      <div className="flex-1 ml-72">
 
-<Sidebar/>
+        <Navbar />
 
-<div className="flex-1">
+        <main className="p-8">
+          {children}
+        </main>
 
-<Navbar/>
+      </div>
 
-{children}
-
-</div>
-
-</div>
-
-)
-
+    </div>
+  );
 }
 
 export default MainLayout;
