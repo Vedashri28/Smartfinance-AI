@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
@@ -11,12 +10,14 @@ import Reports from "./pages/Reports/Reports";
 import Budget from "./pages/Budget/Budget";
 import AIAdvisor from "./pages/AIAdvisor/AIAdvisor";
 import Profile from "./pages/Profile/Profile";
+import Settings from "./pages/Settings/Settings";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Dashboard />} />
+
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
 
@@ -26,6 +27,8 @@ function App() {
         <Route path="/budget" element={<Budget />} />
         <Route path="/advisor" element={<AIAdvisor />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/settings" element={<Settings />} />
+        
       </Routes>
     </BrowserRouter>
   );
