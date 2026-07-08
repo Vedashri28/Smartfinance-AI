@@ -1,39 +1,11 @@
-const GlassCard = ({
-  children,
-  className = "",
-  hover = true,
-}) => {
+import "./GlassCard.css";
+
+function GlassCard({ children, className = "" }) {
   return (
-    <div
-      className={`
-        relative
-        overflow-hidden
-        rounded-[32px]
-        border border-white/20
-        bg-white/10
-        backdrop-blur-3xl
-        shadow-[0_0_60px_rgba(59,130,246,0.25)]
-        transition-all
-        duration-500
-        ${
-          hover
-            ? "hover:-translate-y-2 hover:shadow-[0_0_60px_rgba(59,130,246,.35)]"
-            : ""
-        }
-        ${className}
-      `}
-    >
-      {/* Gradient Border */}
-      <div className="absolute inset-0 rounded-[28px] bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-cyan-500/10 pointer-events-none" />
-
-      {/* Shine Effect */}
-      <div className="absolute -left-40 top-0 h-full w-24 rotate-12 bg-white/10 blur-xl transition-all duration-700 group-hover:left-[120%]" />
-
-      <div className="relative z-10">
-        {children}
-      </div>
+    <div className={`glass-card ${className}`}>
+      {children}
     </div>
   );
-};
+}
 
 export default GlassCard;

@@ -1,0 +1,67 @@
+.glass-btn {
+
+    border: none;
+
+    outline: none;
+
+    cursor: pointer;
+
+    padding: 14px 28px;
+
+    border-radius: var(--radius-md);
+
+    color: var(--text-primary);
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: var(--transition);
+
+    backdrop-filter: var(--glass-blur);
+
+}
+
+.glass-btn.primary {
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    box-shadow: var(--shadow-glass);
+
+}
+
+.glass-btn.primary:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        var(--shadow-glass),
+        var(--shadow-glow);
+
+}
+
+.glass-btn.secondary {
+
+    background: rgba(255,255,255,.08);
+
+    border:1px solid var(--border-glass);
+
+}
+
+.glass-btn.secondary:hover{
+
+    background: rgba(255,255,255,.15);
+
+}
+
+.glass-btn:disabled{
+
+    opacity:.5;
+
+    cursor:not-allowed;
+
+}

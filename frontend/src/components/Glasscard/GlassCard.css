@@ -1,0 +1,27 @@
+.glass-card{
+
+    background: var(--bg-card);
+
+    backdrop-filter: var(--glass-blur);
+
+    border:1px solid var(--border-glass);
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-glass);
+
+    padding:24px;
+
+    transition:var(--transition);
+
+}
+
+.glass-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+    var(--shadow-glass),
+    var(--shadow-glow);
+
+}

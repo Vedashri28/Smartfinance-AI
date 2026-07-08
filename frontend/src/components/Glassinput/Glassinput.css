@@ -1,0 +1,51 @@
+.glass-input-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+.glass-input-group label{
+
+    color:var(--text-secondary);
+
+    font-size:14px;
+
+}
+
+.glass-input{
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid var(--border-glass);
+
+    backdrop-filter:var(--glass-blur);
+
+    border-radius:var(--radius-md);
+
+    color:var(--text-primary);
+
+    padding:14px 18px;
+
+    outline:none;
+
+    transition:var(--transition);
+
+}
+
+.glass-input::placeholder{
+
+    color:var(--text-muted);
+
+}
+
+.glass-input:focus{
+
+    border:1px solid var(--primary);
+
+    box-shadow:0 0 20px rgba(124,58,237,.25);
+
+}
