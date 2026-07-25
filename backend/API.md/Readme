@@ -1,0 +1,14 @@
+# SmartFinance AI Backend APIs
+
+## Register User
+
+POST /api/auth/register
+
+### Request
+
+```json
+{
+  "fullName": "Vedashri",
+  "email": "vedu@gmail.com",
+  "password": "123456"
+}
