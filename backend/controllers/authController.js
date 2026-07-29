@@ -77,6 +77,8 @@ const loginUser = async (req, res) => {
 
         // Find user by email
         const user = await User.findOne({ email });
+        console.log("Email entered:", email);
+console.log("User found:", user);
 
         // Check if user exists
         if (!user) {
@@ -85,17 +87,30 @@ const loginUser = async (req, res) => {
                 message: "User not found",
             });
         }
+
         // Compare entered password with hashed password
-        const isMatch = await bcrypt.compare(password, user.password);
+        // Print for debugging
+console.log("Entered Password:", password);
+console.log("Stored Hashed Password:", user.password);
 
+// Compare password
+const isMatch = await bcrypt.compare(password, user.password);
+
+console.log("Password Match:", isMatch);
+
+        // Check password
         if (!isMatch) {
-        return res.status(401).json({
-        success: false,
-        message: "Invalid email or password",
-    });
-}
+            return res.status(401).json({
+                success: false,
+                message: "Invalid email or password",
+            });
+        }
 
-        // We will continue from here in the next step
+        // Login successful
+        return res.status(200).json({
+            success: true,
+            message: "Login successful",
+        });
 
     } catch (error) {
         console.error(error);
@@ -106,7 +121,6 @@ const loginUser = async (req, res) => {
         });
     }
 };
-
 // =========================
 // Export Controllers
 // =========================
