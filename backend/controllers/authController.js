@@ -1,5 +1,6 @@
 const User = require("../models/User");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 // =========================
 // Register User
@@ -82,6 +83,7 @@ console.log("User found:", user);
 
         // Check if user exists
         if (!user) {
+            console.log("User not found");
             return res.status(404).json({
                 success: false,
                 message: "User not found",
@@ -105,12 +107,28 @@ console.log("Password Match:", isMatch);
                 message: "Invalid email or password",
             });
         }
+        const token = jwt.sign(
+    {
+        id: user._id,
+        email: user.email,
+    },
+    process.env.JWT_SECRET,
+    {
+        expiresIn: "7d",
+    }
+);
 
         // Login successful
         return res.status(200).json({
-            success: true,
-            message: "Login successful",
-        });
+    success: true,
+    message: "Login successful",
+    token,
+    data: {
+        id: user._id,
+        fullName: user.fullName,
+        email: user.email,
+    },
+});
 
     } catch (error) {
         console.error(error);
